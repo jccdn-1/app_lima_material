@@ -1,6 +1,7 @@
 package com.example.lima_material
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -35,33 +36,60 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonEntrar.setOnClickListener {
 
-                auth.signInWithEmailAndPassword(
-                    binding.editTextUsuario.text.toString(),
-                    binding.editTextSenha.text.toString()
-                )
-                    .addOnCompleteListener(this) { task ->
-                        if (task.isSuccessful) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithCustomToken:success")
-                            val user = auth.currentUser
-                            Toast.makeText(baseContext, "Autenticação efetuada.",
-                                Toast.LENGTH_SHORT).show()
-                            //updateUI(user)
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithCustomToken:failure", task.exception)
-                            Toast.makeText(baseContext, "Erro de autenticação.",
-                                Toast.LENGTH_SHORT).show()
-                            //updateUI(null)
+            if(binding.editTextUsuario.text.isNullOrEmpty()) {
+                Toast.makeText(
+                    baseContext,"Campo e-mail vazio ou inválido.",
+                    Toast.LENGTH_LONG
+                ).show()
+            } else if (binding.editTextSenha.text.isNullOrEmpty()) {
+                Toast.makeText(
+                    baseContext,"Campo senha vazio ou inválido.",
+                    Toast.LENGTH_LONG
+                ).show()
+            } else loginUsuarioSenha(
+                binding.editTextUsuario.text.toString(),
+                binding.editTextSenha.text.toString())
 
         }
+
     }
 
-    //public override fun onStart() {
-        //super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        //val currentUser = auth.currentUser
-        //updateUI(currentUser)
+    private fun loginUsuarioSenha(usuario: String, senha: String) {
+        auth.signInWithEmailAndPassword(
+            usuario,
+            senha
+        )
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    abrirTelaInicial()
+                    //updateUI(user)
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w(TAG, "signInWithCustomToken:failure", task.exception)
+                    Toast.makeText(
+                        baseContext, "Erro de autenticação.",
+                        Toast.LENGTH_SHORT).show()
+                    //updateUI(null)
+
+                }
+            }
     }
+
+    fun abrirTelaInicial() {
+
+        Toast.makeText(
+            baseContext, "Autenticação efetuada.",
+            Toast.LENGTH_SHORT).show()
+
+        binding.editTextUsuario.text.clear()
+        binding.editTextSenha.text.clear()
+
+        val intent = Intent(this, TelaInicialActivity::class.java)
+
+        startActivity(intent)
+
+        finish()
+
     }
+
 }

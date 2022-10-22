@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1077298632714",
+    "project_id": "projeto-pdm-app",
+    "storage_bucket": "projeto-pdm-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077298632714:android:a2afba97602cb61e79e7f3",
+        "android_client_info": {
+          "package_name": "com.example.lima_material"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1077298632714-n12cm2prgtddlnc92tuqgu52kf81qov8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3DG7sjxgeAL6OlAIVB7Kx6rlWM54OISk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1077298632714-n12cm2prgtddlnc92tuqgu52kf81qov8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
