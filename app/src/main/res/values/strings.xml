@@ -4,4 +4,5 @@
     <string name="edit_senha">Senha</string>
     <string name="btn_login">Entrar</string>
     <string name="text_ou">ou</string>
+    <string name="text_fazer_login_google">Fazer login com sua Conta Google</string>
 </resources>
