@@ -68,6 +68,14 @@ class MainActivity : AppCompatActivity() {
             signIn()
         }
 
+        binding.textCriarConta.setOnClickListener {
+
+            val intent = Intent(this, TelaCadastroActivity::class.java)
+
+            startActivity(intent)
+
+        }
+
     }
 
     private fun signIn() {
@@ -159,5 +167,4 @@ class MainActivity : AppCompatActivity() {
         finish()
 
     }
-
 }

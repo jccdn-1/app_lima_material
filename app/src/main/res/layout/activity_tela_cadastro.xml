@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity=""
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".TelaCadastroActivity">
+
+  <EditText
+      android:id="@+id/editTextEmailCadastro"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:ems="10"
+      android:inputType="textEmailAddress"
+      android:hint="@string/edit_usuario" />
+
+  <EditText
+      android:id="@+id/editTextCriarSenha"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:ems="10"
+      android:inputType="textPassword"
+      android:hint="@string/edit_senha"/>
+
+  <Button
+      android:id="@+id/buttonCriarConta"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/btn_criar_conta" />
+</LinearLayout>

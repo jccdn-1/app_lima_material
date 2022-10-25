@@ -5,4 +5,8 @@
     <string name="btn_login">Entrar</string>
     <string name="text_ou">ou</string>
     <string name="text_fazer_login_google">Fazer login com sua Conta Google</string>
+    <string name="text_criar_conta">Não tem uma conta? Criar Conta</string>
+    <string name="text_esqueceu_senha">Esqueceu a senha?</string>
+    <string name="text_confirmar_senha">Confirmar senha</string>
+    <string name="btn_criar_conta">Criar Conta</string>
 </resources>
